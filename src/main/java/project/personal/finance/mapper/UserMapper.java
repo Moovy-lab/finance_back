@@ -7,6 +7,7 @@ import project.personal.finance.dto.UserDTO;
 import project.personal.finance.entities.User;
 
 @Mapper( componentModel = "Spring")
+@Component
 public interface UserMapper {
 
     public User toEntity(UserDTO dto);

@@ -1,6 +1,5 @@
 package project.personal.finance.error;
 
-import jakarta.validation.constraints.AssertFalse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

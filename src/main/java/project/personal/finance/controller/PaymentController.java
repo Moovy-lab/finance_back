@@ -1,11 +1,10 @@
 package project.personal.finance.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.personal.finance.dto.PaymentDTO;
-import project.personal.finance.entities.Payment;
+
 
 import java.util.List;
 

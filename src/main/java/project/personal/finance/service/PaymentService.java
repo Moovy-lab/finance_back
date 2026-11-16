@@ -1,7 +1,6 @@
 package project.personal.finance.service;
 
 import project.personal.finance.dto.PaymentDTO;
-import project.personal.finance.entities.Payment;
 
 import java.util.List;
 

@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import project.personal.finance.dto.PaymentDTO;
-import project.personal.finance.entities.Payment;
 import project.personal.finance.service.PaymentService;
 
 import java.net.URI;
