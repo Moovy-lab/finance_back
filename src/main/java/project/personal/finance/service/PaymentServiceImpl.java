@@ -1,6 +1,5 @@
 package project.personal.finance.service;
 
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +23,12 @@ public class PaymentServiceImpl implements PaymentService{
 
     @Override
     public PaymentDTO ajouter(PaymentDTO paymentDTO){
+
+        //Mettre en place une logique conditionnelle : si le montant est inférieur à 0, on lève une exception
+//        if (this.getAmount() < 0) {
+//            throw new MontantNegativeException("Le montant est inférieur à 0");
+//        }
+
         Payment paymentCreated = paymentRepository.save(paymentMapper.toEntity(paymentDTO));
         return paymentMapper.toDto(paymentCreated);
     }
@@ -44,4 +49,15 @@ public class PaymentServiceImpl implements PaymentService{
     public PaymentDTO findById(Integer id) {
         return paymentRepository.findById(id).map(paymentMapper::toDto).orElseThrow(()-> new DataNotFoundException("Payement Introuvable"));
     }
+
+    @Override
+    @Transactional
+    public void supprimer(Integer id) {
+         paymentRepository.deletePaymentByid(id);
+    }
+
+
+//    public int getAmount() {
+//        return amount;
+//    }
 }

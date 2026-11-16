@@ -26,9 +26,10 @@ public class Payment {
     private LocalDateTime date;
 
     @Column(name = "amount", nullable = false)
-    private float amount;
+    private double amount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", nullable = false)
     private User utilisateur;
+
 }

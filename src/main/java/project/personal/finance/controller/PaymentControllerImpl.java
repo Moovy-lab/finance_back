@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import project.personal.finance.dto.PaymentDTO;
+import project.personal.finance.entities.Payment;
 import project.personal.finance.service.PaymentService;
 
 import java.net.URI;
@@ -20,6 +21,7 @@ public class PaymentControllerImpl  implements PaymentController{
     public PaymentControllerImpl(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
+
 
     /**
      * Cette classe permet d'ajouter une nouvelle ressource payment
@@ -78,5 +80,12 @@ public class PaymentControllerImpl  implements PaymentController{
     public ResponseEntity<PaymentDTO> findById(@PathVariable("id") Integer id){
         PaymentDTO paymentTrouve = paymentService.findById(id);
         return ResponseEntity.ok().body(paymentTrouve);
+    }
+
+    @DeleteMapping("/payments/{id}")
+    @Override
+    public ResponseEntity<Void> supprimer(@PathVariable("id") Integer id) {
+        paymentService.supprimer(id);
+        return ResponseEntity.noContent().build();
     }
 }

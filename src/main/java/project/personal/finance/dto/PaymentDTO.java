@@ -19,7 +19,7 @@ public class PaymentDTO {
     private LocalDateTime date;
 
     @NotNull(message = "Le montant dépensé est obligatoire")
-    private float amount;
+    private double amount;
 
     private User utilisateur;
 }
